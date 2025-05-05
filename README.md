@@ -19,6 +19,8 @@ How to use install maker?
 I made this app to store various games and apps as a single file that can be unpacked later. (for practicality).
 
 Hotkeys:
+
+
 Esc - close the app if it's not generating or extracting
 F - show the listfile
 
