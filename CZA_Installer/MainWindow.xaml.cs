@@ -53,6 +53,7 @@ namespace CZA_Installer
         {
             SelectedOutPutFolder = TextBoxOutputPath.Text;
             if (Directory.Exists(SelectedOutPutFolder) == false) { MessageBox.Show("Output folder doesnt exist"); return; }
+            if (Data.Listfile.Count==0) { MessageBox.Show("Empty listfile"); return; }
             Extracting = true;
             DisableButtons(true);
              await ArchiveManager.Extract(CurrentlyLoadedArchive, SelectedOutPutFolder, Data, this);
@@ -152,6 +153,7 @@ namespace CZA_Installer
             int year = GetInt(Maker_InputYear.Text);
             string fullPath = Path.Combine(folder,title);
             if (Directory.Exists(folder) == false) { MessageBox.Show("Folder doesnt exist"); return; }
+            if (Data.Listfile.Count == 0) { MessageBox.Show("Empty listfile"); return; }
             if (FolderAndSubfoldersAreEmpty(folder)) { MessageBox.Show("folder contains no files"); return; }
             if (title.Length == 0) { MessageBox.Show("Empty title"); return; }
             if (header.Source == null) { MessageBox.Show("No header image"); return; }
@@ -250,7 +252,7 @@ namespace CZA_Installer
                 if (!Extracting && !Generating) { Environment.Exit(0); return; }
 
             }
-            if (e.Key == System.Windows.Input.Key.F)
+            if (e.Key == System.Windows.Input.Key.F1)
             {
                 reader r = new reader(Data.Listfile); r.ShowDialog();
 
