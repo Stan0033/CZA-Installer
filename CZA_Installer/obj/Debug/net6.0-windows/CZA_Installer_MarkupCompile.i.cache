@@ -1,0 +1,20 @@
+﻿CZA_Installer
+1.0
+
+winexe
+C#
+.cs
+D:\Projects\C#\CZA Installer\CZA_Installer\obj\Debug\net6.0-windows\
+CZA_Installer
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+D:\Projects\C#\CZA Installer\CZA_Installer\App.xaml
+21698774198
+1-837405022
+7-1270028107
+203-671117014
+MainWindow.xaml;reader.xaml;
+
+True
+

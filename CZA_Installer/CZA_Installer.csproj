@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ 
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
+    <UseWindowsForms>True</UseWindowsForms>
+    <AssemblyVersion>1.0</AssemblyVersion>
+    <RootNamespace>CZA_Installer</RootNamespace>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <Content Include="ico.ico" />
+  </ItemGroup>
+
+</Project>
