@@ -159,15 +159,28 @@ namespace CZA_Installer
             await ArchiveManager.GenerateArchive(file, folder, title, year, header.Source, this);
             Generating = false;
             DisableButtons(false);
-            if (CheckOpen.IsChecked == true) { openFolder(fullPath); }
+            if (CheckOpen.IsChecked == true) { OpenFolder(fullPath); }
         }
 
-        private void openFolder(string target)
+        private void OpenFolder(string target)
         {
-           
-            Process.Start("explorer.exe",target);
-
+            try
+            {
+                if (Directory.Exists(target))
+                {
+                    Process.Start("explorer.exe", target);
+                }
+                else
+                {
+                    MessageBox.Show($"The folder \"{target}\" does not exist.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to open folder: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+
 
         private int GetInt(string t)
         {
