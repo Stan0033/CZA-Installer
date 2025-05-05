@@ -1,4 +1,5 @@
  This is an app that can serve as both installer maker, and installer.
+ 
 When does it serve as installer maker? 
 - when yo start it from the .exe
 When does it serve as installer?
