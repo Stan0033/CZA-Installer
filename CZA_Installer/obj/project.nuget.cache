@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AJvDBHdAVyI=",
+  "dgSpecHash": "8Rx0Lqnhb8s=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\C#\\CZA Installer\\CZA_Installer\\CZA_Installer.csproj",
+  "projectFilePath": "D:\\Projects\\C#\\CZA Installer\\CZA-Installer\\CZA_Installer\\CZA_Installer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stan0\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
     "C:\\Users\\stan0\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",

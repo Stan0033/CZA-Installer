@@ -74,27 +74,31 @@
         </Canvas>
 
         <!-- Install Footer -->
-        <StackPanel Name="InstallFooter" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBox Name="TextBoxOutputPath" Width="270" IsReadOnly="True"/>
-            <Button Width="30" Click="select">...</Button>
-            <Button Width="120" Click="install">INSTALL</Button>
+        <StackPanel  Name="InstallFooter"   Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Foreground="White"   Name="TextBoxOutputPath" Width="270" IsReadOnly="True"/>
+                <Button Width="30" Click="select">...</Button>
+                <Button   Name="ButtonInstall"  Width="120" Click="install">INSTALL</Button>
+            </StackPanel>
+            <CheckBox Name="CheckOpen" Foreground="White" Content="Open folder"/>
         </StackPanel>
+      
 
         <!-- Maker Footer -->
         <StackPanel Name="MakerFooter" Visibility="Collapsed" Grid.Row="1" Margin="10" Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Height="30">
                 <TextBlock Text="Folder:" VerticalAlignment="Center" Margin="2"/>
-                <TextBox Name="Maker_InputFolder" Width="150" IsReadOnly="True" PreviewMouseDown="SetMakerInputFolder"/>
+               <TextBox Foreground="White" Name="Maker_InputFolder" Width="150" IsReadOnly="True" PreviewMouseDown="SetMakerInputFolder"/>
                 <TextBlock Text="To File:" VerticalAlignment="Center" Margin="2"/>
-                <TextBox Name="Maker_OutPutFile" Width="120" IsReadOnly="True" PreviewMouseDown="SetMakerOutPutFile"/>
-                <Button Content="Make" Width="70" Click="Make"/>
+               <TextBox Foreground="White" Name="Maker_OutPutFile" Width="120" IsReadOnly="True" PreviewMouseDown="SetMakerOutPutFile"/>
+                <Button Name="ButtonMake" Content="Make" Width="70" Click="Make"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Height="30">
                 <TextBlock Text="Title:" VerticalAlignment="Center" Margin="2"/>
-                <TextBox Name="Maker_InputTitle" Width="150"/>
+               <TextBox Foreground="White" Name="Maker_InputTitle" Width="150"/>
                 <TextBlock Text="Year:" VerticalAlignment="Center" Margin="2"/>
-                <TextBox Name="Maker_InputYear" Width="50"/>
+               <TextBox Foreground="White" Name="Maker_InputYear" Width="50"/>
             </StackPanel>
         </StackPanel>
     </Grid>

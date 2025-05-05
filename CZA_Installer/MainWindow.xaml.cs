@@ -9,6 +9,7 @@ using Path = System.IO.Path;
 using Microsoft.Win32;
 using System.Windows.Media.Imaging;
 using MessageBox = System.Windows.MessageBox;
+using System.Diagnostics;
 namespace CZA_Installer
 {
 
@@ -53,10 +54,17 @@ namespace CZA_Installer
             SelectedOutPutFolder = TextBoxOutputPath.Text;
             if (Directory.Exists(SelectedOutPutFolder) == false) { MessageBox.Show("Output folder doesnt exist"); return; }
             Extracting = true;
-            await ArchiveManager.Extract(CurrentlyLoadedArchive, SelectedOutPutFolder, Data, this);
+            DisableButtons(true);
+             await ArchiveManager.Extract(CurrentlyLoadedArchive, SelectedOutPutFolder, Data, this);
             Extracting = false;
-        }
+            DisableButtons(false);
 
+        }
+        private void DisableButtons(bool v)
+        {
+            ButtonInstall.IsEnabled = v;
+            ButtonMake.IsEnabled = v;
+        }
         private void select(object sender, RoutedEventArgs e)
         {
             TextBoxOutputPath.Text = SelectSaveFolder();
@@ -134,13 +142,15 @@ namespace CZA_Installer
         }
 
 
-
+         
         private async void Make(object sender, RoutedEventArgs e)
         {
+            DisableButtons(true);
             string folder = Maker_InputFolder.Text;
             string file = Maker_OutPutFile.Text;
             string title = Maker_InputTitle.Text;
             int year = GetInt(Maker_InputYear.Text);
+            string fullPath = Path.Combine(folder,title);
             if (Directory.Exists(folder) == false) { MessageBox.Show("Folder doesnt exist"); return; }
             if (FolderAndSubfoldersAreEmpty(folder)) { MessageBox.Show("folder contains no files"); return; }
             if (title.Length == 0) { MessageBox.Show("Empty title"); return; }
@@ -148,7 +158,17 @@ namespace CZA_Installer
             Generating = true;
             await ArchiveManager.GenerateArchive(file, folder, title, year, header.Source, this);
             Generating = false;
+            DisableButtons(false);
+            if (CheckOpen.IsChecked == true) { openFolder(fullPath); }
         }
+
+        private void openFolder(string target)
+        {
+           
+            Process.Start("explorer.exe",target);
+
+        }
+
         private int GetInt(string t)
         {
             if (int.TryParse(t, out int result)) { return result; } else { return 0; }
