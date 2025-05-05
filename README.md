@@ -22,4 +22,5 @@ Hotkeys:
 Esc - close the app if it's not generating or extracting
 F - show the listfile
 
+![image](https://i.ibb.co/d4CPbTLk/Screenshot-2025-05-05-160023.png)
 
