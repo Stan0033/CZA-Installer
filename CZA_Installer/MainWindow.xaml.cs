@@ -153,10 +153,12 @@ namespace CZA_Installer
             int year = GetInt(Maker_InputYear.Text);
             string fullPath = Path.Combine(folder,title);
             if (Directory.Exists(folder) == false) { MessageBox.Show("Folder doesnt exist"); return; }
-            if (Data.Listfile.Count == 0) { MessageBox.Show("Empty listfile"); return; }
+            
+            
             if (FolderAndSubfoldersAreEmpty(folder)) { MessageBox.Show("folder contains no files"); return; }
             if (title.Length == 0) { MessageBox.Show("Empty title"); return; }
             if (header.Source == null) { MessageBox.Show("No header image"); return; }
+           // if (Data.Listfile.Count == 0) { MessageBox.Show("Empty listfile"); return; }
             Generating = true;
             await ArchiveManager.GenerateArchive(file, folder, title, year, header.Source, this);
             Generating = false;
