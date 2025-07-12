@@ -1,7 +1,7 @@
  CZA Installer is a simple tool that lets you pack a folder into a single .cza file with no compression, and later extract it.
 It works both as an installer maker and as the installer itself.
 
-Create installer: Run the .exe to build a .cza file from a folder. You’ll need to provide a title, year, and header image (215x460 recommended).
+Create installer: Run the .exe to build a .cza file from a folder. You’ll need to provide a title, year, and header image (215x460 recommended - like the ones in Stema).
 
 Run installer: Associate .cza files with the app and double-click to extract.
 
