@@ -20,7 +20,7 @@ I made this app to store various games and apps as a single file that can be unp
 
 Hotkeys:
 - Esc - close the app if it's not generating or extracting
-- F - show the listfile
+- F1 - show the listfile
 
 ![image](https://i.ibb.co/d4CPbTLk/Screenshot-2025-05-05-160023.png)
 
